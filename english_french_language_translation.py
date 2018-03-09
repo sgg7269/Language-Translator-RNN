@@ -101,9 +101,10 @@ from distutils.version import LooseVersion
 import warnings
 import tensorflow as tf
 
+# Once upon a time this was useful; not so much anymore
 # Check TensorFlow Version
-assert LooseVersion(tf.__version__) in [LooseVersion('1.0.0'), LooseVersion('1.0.1')], 'This project requires TensorFlow version 1.0  You are using {}'.format(tf.__version__)
-print('TensorFlow Version: {}'.format(tf.__version__))
+# assert LooseVersion(tf.__version__) in [LooseVersion('1.0.0'), LooseVersion('1.0.1')], 'This project requires TensorFlow version 1.0  You are using {}'.format(tf.__version__)
+# print('TensorFlow Version: {}'.format(tf.__version__))
 
 # Check for a GPU
 if not tf.test.gpu_device_name():
