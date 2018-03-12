@@ -15,8 +15,10 @@ DON'T MODIFY ANYTHING IN THIS CELL
 import helper
 import problem_unittests as tests
 
-source_path = 'data/small_vocab_en'
-target_path = 'data/small_vocab_fr'
+# source_path = 'data/small_vocab_en'
+# target_path = 'data/small_vocab_fr'
+source_path = 'data/c.statements'
+target_path = 'data/js.statements'
 source_text = helper.load_data(source_path)
 target_text = helper.load_data(target_path)
 
@@ -619,7 +621,10 @@ valid_target = target_int_text[:batch_size]
 with tf.Session(graph=train_graph) as sess:
     sess.run(tf.global_variables_initializer())
 
+    # valid_acc = 0
+
     for epoch_i in range(epochs):
+    # while valid_acc < .95:
         for batch_i, (source_batch, target_batch, sources_lengths, targets_lengths) in enumerate(
                 get_batches(train_source, train_target, batch_size,
                             source_vocab_to_int['<PAD>'],
